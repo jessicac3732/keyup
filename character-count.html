@@ -7,7 +7,20 @@
   <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <script>
     $(function(){
-      
+      $('input').keyup(function(){
+        var number = 40;
+        var user = $('input').val().length;
+        var long = (number - user);
+        $('h1').html(long);
+        if(long<0){
+          $('h1').css('color','red');
+          $('input').css('border-color', 'red');
+        }
+        else{
+          $('h1').css('color', 'black');
+          $('input'),css('border-color', 'black');
+        }
+      })
       // Using only Javascript/jQuery, make the character count
       // show how many characters are remaining (starting from 40).
       // The text and input's border color should
